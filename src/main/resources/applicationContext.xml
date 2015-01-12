@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	   		http://www.springframework.org/schema/context
+	   		http://www.springframework.org/schema/context/spring-context-3.1.xsd
+			http://www.springframework.org/schema/mvc 
+			http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
+			
+	<!-- <context:property-placeholder properties-ref="deployProperties" /> -->
+
+	<!-- This is used to tell spring container to detect annotations -->
+	<context:annotation-config />
+
+	<!-- Scan for spring stereo types and Controllers and Services
+	 For example @Controller and @Service. Make sure to set the correct base-package-->
+	<context:component-scan base-package="com.healthycode" /> 
+	
+	<!-- Imports datasource configuration -->
+	<import resource="spring-data-neo4j.xml"/>
+	<!-- 
+	<bean id="journalService"
+		class="com.healthycode.service.JournalService">
+	</bean>   -->
+	
+</beans>
